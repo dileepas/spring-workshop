@@ -22,4 +22,10 @@ public class TodoController {
     public Iterable<Todo> getTodos() {
         return todoRepository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Todo getTodosByID(@PathVariable Integer id) {
+        return todoRepository.findById(id.longValue()).isPresent()?
+                todoRepository.findById(id.longValue()).get():null;
+    }
 }
