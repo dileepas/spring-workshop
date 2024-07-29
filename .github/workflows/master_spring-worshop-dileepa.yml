@@ -44,7 +44,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Build with Maven
-        run: mvn spring-boot:run
+        run: mvn clean install
 
       - name: Deploy to Google App Engine
         uses: google-github-actions/deploy-appengine@v0
