@@ -50,7 +50,7 @@ jobs:
         uses: google-github-actions/deploy-appengine@v0
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          credentials: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
           promote: true
           version: 'auto' # Automatically generate a version ID
           deliverables: target/spring-demo-0.0.1-SNAPSHOT.jar # Update this to the path of your built JAR
