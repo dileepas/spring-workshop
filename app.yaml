@@ -5,7 +5,4 @@ instance_class: F1
 handlers:
   - url: .*
     script: auto
-basic_scaling:
-  max_instances: 3
-  idle_timeout: 10m
 service_account: kinetic-abbey-429608-b9@appspot.gserviceaccount.com
