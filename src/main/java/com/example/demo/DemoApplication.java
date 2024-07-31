@@ -20,7 +20,7 @@ public class DemoApplication {
 
 		@GetMapping("/ping")
 		public String ping() {
-			return "Pong...!";
+			return "Dileepa Fernando ...!";
 		}
 	}
 }
