@@ -13,9 +13,9 @@ public class DemoApplication {
 
 	@RestController
 	class Helloworld {
-		@GetMapping("/")
-		public String greet() {
-			return "Hello!";
+		@GetMapping("/slussen")
+		public String routeToSlussen() {
+			return "Slussen!";
 		}
 
 		@GetMapping("/ping")
