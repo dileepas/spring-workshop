@@ -4,15 +4,15 @@ import java.util.List;
 
 public class Departure {
     private String destination;
-    private int directionCode;
+    private int direction_code;
     private String direction;
     private String state;
     private String display;
     private String scheduled;
     private String expected;
     private Journey journey;
-    private StopArea stopArea;
-    private StopPoint stopPoint;
+    private StopArea stop_area;
+    private StopPoint stop_point;
     private Line line;
     private List<Object> deviations;  // Assuming deviations is an empty array, we use Object. Adjust type if known.
 
@@ -25,12 +25,12 @@ public class Departure {
         this.destination = destination;
     }
 
-    public int getDirectionCode() {
-        return directionCode;
+    public int getDirection_code() {
+        return direction_code;
     }
 
-    public void setDirectionCode(int directionCode) {
-        this.directionCode = directionCode;
+    public void setDirection_code(int direction_code) {
+        this.direction_code = direction_code;
     }
 
     public String getDirection() {
@@ -81,20 +81,20 @@ public class Departure {
         this.journey = journey;
     }
 
-    public StopArea getStopArea() {
-        return stopArea;
+    public StopArea getStop_area() {
+        return stop_area;
     }
 
-    public void setStopArea(StopArea stopArea) {
-        this.stopArea = stopArea;
+    public void setStop_area(StopArea stop_area) {
+        this.stop_area = stop_area;
     }
 
-    public StopPoint getStopPoint() {
-        return stopPoint;
+    public StopPoint getStop_point() {
+        return stop_point;
     }
 
-    public void setStopPoint(StopPoint stopPoint) {
-        this.stopPoint = stopPoint;
+    public void setStop_point(StopPoint stop_point) {
+        this.stop_point = stop_point;
     }
 
     public Line getLine() {

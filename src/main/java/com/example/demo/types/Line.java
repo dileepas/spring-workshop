@@ -3,8 +3,8 @@ package com.example.demo.types;
 public class Line {
     private int id;
     private String designation;
-    private String transportMode;
-    private String groupOfLines;
+    private String transport_mode;
+    private String group_of_lines;
 
     // Getters and Setters
     public int getId() {
@@ -23,19 +23,19 @@ public class Line {
         this.designation = designation;
     }
 
-    public String getTransportMode() {
-        return transportMode;
+    public String getTransport_mode() {
+        return transport_mode;
     }
 
-    public void setTransportMode(String transportMode) {
-        this.transportMode = transportMode;
+    public void setTransport_mode(String transport_mode) {
+        this.transport_mode = transport_mode;
     }
 
-    public String getGroupOfLines() {
-        return groupOfLines;
+    public String getGroup_of_lines() {
+        return group_of_lines;
     }
 
-    public void setGroupOfLines(String groupOfLines) {
-        this.groupOfLines = groupOfLines;
+    public void setGroup_of_lines(String group_of_lines) {
+        this.group_of_lines = group_of_lines;
     }
 }

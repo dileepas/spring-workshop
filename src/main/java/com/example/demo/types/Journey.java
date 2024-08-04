@@ -3,7 +3,7 @@ package com.example.demo.types;
 public class Journey {
     private long id;
     private String state;
-    private String predictionState;  // Optional, based on presence
+    private String prediction_state;  // Optional, based on presence
 
     // Getters and Setters
     public long getId() {
@@ -22,12 +22,12 @@ public class Journey {
         this.state = state;
     }
 
-    public String getPredictionState() {
-        return predictionState;
+    public String getPrediction_state() {
+        return prediction_state;
     }
 
-    public void setPredictionState(String predictionState) {
-        this.predictionState = predictionState;
+    public void setPrediction_state(String prediction_state) {
+        this.prediction_state = prediction_state;
     }
 }
 
