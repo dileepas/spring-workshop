@@ -1,5 +1,6 @@
 package com.example.demo.types;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Departure {
@@ -58,7 +59,8 @@ public class Departure {
     }
 
     public String getScheduled() {
-        return scheduled;
+        LocalDateTime dateTime = LocalDateTime.parse(scheduled);
+        return dateTime.toLocalTime().toString();
     }
 
     public void setScheduled(String scheduled) {
@@ -66,7 +68,8 @@ public class Departure {
     }
 
     public String getExpected() {
-        return expected;
+        LocalDateTime dateTime = LocalDateTime.parse(expected);
+        return dateTime.toLocalTime().toString();
     }
 
     public void setExpected(String expected) {
