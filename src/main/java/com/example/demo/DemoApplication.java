@@ -23,7 +23,7 @@ public class DemoApplication {
 	class Helloworld {
 		@GetMapping("/")
 		public String greet() {
-			return "Hello!";
+			return "Hello Dileepa Welcome!";
 		}
 
 		@GetMapping("/ping")
