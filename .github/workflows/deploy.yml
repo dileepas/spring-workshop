@@ -57,7 +57,7 @@ jobs:
           echo "Stopping service"
           sudo systemctl stop myapp.service || true
           echo "Moving jar service"
-          sudo mv /home/$VM_USER/app.jar /opt/myapp/app.jar
+          sudo mv /home/dileepatest87/app.jar /opt/myapp/app.jar
           echo "Starting service"
           sudo systemctl start myapp.service
           EOF
