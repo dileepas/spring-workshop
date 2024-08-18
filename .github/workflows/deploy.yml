@@ -28,7 +28,16 @@ jobs:
       - name: Add GCP VM to known_hosts
         run: |
           ssh-keyscan -H ${{ secrets.GCP_VM_IP }} >> ~/.ssh/known_hosts
-          
+
+      - name: Debug - Print Environment Variables
+        run: |
+          echo "VM_USER: ${{ secrets.GCP_VM_USER }}"
+          echo "VM_IP: ${{ secrets.GCP_VM_IP }}"          
+
+      - name: Debug - Test SSH Connection
+        run: |
+          echo "Testing SSH connection"
+          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }} "echo 'SSH connection successful'"
 
       - name: Deploy to GCP VM
         env:
