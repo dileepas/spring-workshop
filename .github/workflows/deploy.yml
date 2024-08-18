@@ -36,11 +36,17 @@ jobs:
           VM_IP: ${{ secrets.GCP_VM_IP }}
           VM_USER: ${{ secrets.GCP_VM_USER }}
         run: |
+          # Save the SSH private key to a file
           echo "$SSH_PRIVATE_KEY" > key.pem
+          # Set the correct permissions
           chmod 600 key.pem
+          # Test the SSH connection
+          ssh -i key.pem -o StrictHostKeyChecking=no $VM_USER@$VM_IP "echo 'SSH connection successful'"
+          # Copy the jar file to the VM
           scp -i key.pem target/*.jar $VM_USER@$VM_IP:/home/$VM_USER/app.jar
+          # Restart the application on the VM
           ssh -i key.pem $VM_USER@$VM_IP << 'EOF'
-            sudo systemctl stop myapp.service || true
-            sudo mv /home/$VM_USER/app.jar /opt/myapp/app.jar
-            sudo systemctl start myapp.service
+          sudo systemctl stop myapp.service || true
+          sudo mv /home/$VM_USER/app.jar /opt/myapp/app.jar
+          sudo systemctl start myapp.service
           EOF
