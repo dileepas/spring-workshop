@@ -34,17 +34,14 @@ jobs:
           echo "VM_USER: ${{ secrets.GCP_VM_USER }}"
           echo "VM_IP: ${{ secrets.GCP_VM_IP }}"          
 
-      - name: Debug - Test SSH Connection
-        run: |
-          echo "Testing SSH connection"
-          ssh -i key.pem -o StrictHostKeyChecking=no ${{ secrets.GCP_VM_USER }}@${{ secrets.GCP_VM_IP }} "echo 'SSH connection successful'"
-
       - name: Deploy to GCP VM
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GCP_SSH_KEY }}
           VM_IP: ${{ secrets.GCP_VM_IP }}
           VM_USER: ${{ secrets.GCP_VM_USER }}
         run: |
+          echo "VM_USER: $VM_USER
+          echo "VM_IP: $VM_IP  
           # Save the SSH private key to a file
           echo "$SSH_PRIVATE_KEY" > key.pem
           # Set the correct permissions
