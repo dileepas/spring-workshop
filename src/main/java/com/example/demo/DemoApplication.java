@@ -28,12 +28,6 @@ public class DemoApplication {
 
 		@GetMapping("/ping")
 		public List<Departure> ping() throws Exception {
-/*            String url = "https://transport.integration.sl.se/v1/sites/4305/departures?transport=BUS&line=474&direction=2";
-			HttpRequest req = HttpRequest.newBuilder().uri(new URI(url)).GET().build();
-			HttpResponse<String> response = HttpClient.newHttpClient().send(req, BodyHandlers.ofString());
-			String res = response.body();
-			ObjectMapper objectMapper = new ObjectMapper();
-			DeparturesResponse  list = objectMapper.readValue(res, DeparturesResponse.class);*/
 			return service.getList().getDepartures();
 		}
 	}
