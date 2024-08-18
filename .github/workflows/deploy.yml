@@ -43,7 +43,7 @@ jobs:
           # Test the SSH connection
           ssh -i key.pem -o StrictHostKeyChecking=no $VM_USER@$VM_IP "echo 'SSH connection successful'"
           # Copy the jar file to the VM
-          scp -i key.pem target/*.jar $VM_USER@$VM_IP:/home/$VM_USER/app.jar
+          scp -i key.pem target/*.jar $VM_USER@$VM_IP:/home/$VM_USER/app.jar "echo 'Copy the jar file successful'"
           # Restart the application on the VM
           ssh -i key.pem $VM_USER@$VM_IP << 'EOF'
           sudo systemctl stop myapp.service || true
