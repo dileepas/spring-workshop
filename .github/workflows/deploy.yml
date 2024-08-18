@@ -46,7 +46,12 @@ jobs:
           scp -i key.pem target/*.jar $VM_USER@$VM_IP:/home/$VM_USER/app.jar
           # Restart the application on the VM
           ssh -i key.pem $VM_USER@$VM_IP << 'EOF'
+          echo "Current directory:" 
+          pwd
+          echo "Stopping service"
           sudo systemctl stop myapp.service || true
+          echo "Moving jar service"
           sudo mv /home/$VM_USER/app.jar /opt/myapp/app.jar
+          echo "Starting service"
           sudo systemctl start myapp.service
           EOF
